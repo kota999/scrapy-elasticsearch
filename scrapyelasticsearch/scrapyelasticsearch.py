@@ -32,7 +32,9 @@ class InvalidSettingsException(Exception):
 class ElasticSearchPipeline(object):
     settings = None
     es = None
-    items_buffer = []
+
+    def __init__(self):
+        self.items_buffer = []
 
     @classmethod
     def validate_settings(cls, settings):
